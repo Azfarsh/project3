@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Food Paradise</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);">
+    <!-- Navigation Bar -->
+    <nav style="background: linear-gradient(to right, #4facfe 0%, #e68af7 100%); padding: 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <h1 style="color: #fff; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Fusion Food Paradise</h1>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: bold; transition: all 0.3s;">Home</a>
+                <a href="#" style="color: #fff; text-decoration: none; transition: all 0.3s;">Menu</a>
+                <a href="#" style="color: #fff; text-decoration: none; transition: all 0.3s;">About</a>
+                <a href="#" style="color: #fff; text-decoration: none; transition: all 0.3s;"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div style="background: linear-gradient(rgba(79, 172, 254, 0.8), rgba(230, 138, 247, 0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5'); background-size: cover; background-position: center; padding: 6rem 1rem; text-align: center; color: white;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Discover Global Flavors</h1>
+        <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Experience a world of taste with our curated selection of international dishes</p>
+    </div>
+
+    <!-- Categories and Products -->
+    <div style="max-width: 1200px; margin: 3rem auto; padding: 0 1rem;">
+        <!-- Row 1: International Favorites -->
+        <h2 style="color: #4a90e2; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin: 2rem 0;">International Favorites</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- Product Card 1 -->
+            <div class="product-card" style="background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); border-radius: 15px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s;">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Neapolitan Pizza" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                <h3 style="margin: 1rem 0; color: #4a90e2;">Neapolitan Pizza</h3>
+                <p style="color: #666; height: 3em;">Classic Italian pizza with San Marzano tomatoes and buffalo mozzarella</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                    <p style="color: #4facfe; font-weight: bold; font-size: 1.2rem;">$18.99</p>
+                    <span style="color: #f7d794;"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button onclick="addToCart(this)" style="width: 100%; padding: 0.8rem; background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;">Add to Cart</button>
+            </div>
+            <!-- Repeat similar product cards 5 more times for Row 1 -->
+        </div>
+
+        <!-- Row 2: Asian Delights -->
+        <h2 style="color: #e68af7; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin: 2rem 0;">Asian Delights</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- Product Card 1 -->
+            <div class="product-card" style="background: linear-gradient(135deg, #ffffff 0%, #fff0f9 100%); border-radius: 15px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s;">
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae" alt="Sushi Platter" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                <h3 style="margin: 1rem 0; color: #e68af7;">Signature Sushi Platter</h3>
+                <p style="color: #666; height: 3em;">Assorted fresh sushi with premium fish and toppings</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                    <p style="color: #e68af7; font-weight: bold; font-size: 1.2rem;">$24.99</p>
+                    <span style="color: #f7d794;"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <button onclick="addToCart(this)" style="width: 100%; padding: 0.8rem; background: linear-gradient(to right, #e68af7 0%, #ff99cc 100%); color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;">Add to Cart</button>
+            </div>
+            <!-- Repeat similar product cards 5 more times for Row 2 -->
+        </div>
+
+        <!-- Row 3: Healthy Options -->
+        <h2 style="color: #4facfe; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin: 2rem 0;">Healthy Options</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- Product Card 1 -->
+            <div class="product-card" style="background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); border-radius: 15px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s;">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Quinoa Bowl" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                <h3 style="margin: 1rem 0; color: #4facfe;">Superfood Bowl</h3>
+                <p style="color: #666; height: 3em;">Quinoa, avocado, kale, and roasted chickpeas</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                    <p style="color: #4facfe; font-weight: bold; font-size: 1.2rem;">$16.99</p>
+                    <span style="color: #f7d794;"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <button onclick="addToCart(this)" style="width: 100%; padding: 0.8rem; background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;">Add to Cart</button>
+            </div>
+            <!-- Repeat similar product cards 5 more times for Row 3 -->
+        </div>
+
+        <!-- Row 4: Sweet Treats -->
+        <h2 style="color: #e68af7; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin: 2rem 0;">Sweet Treats</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- Product Card 1 -->
+            <div class="product-card" style="background: linear-gradient(135deg, #ffffff 0%, #fff0f9 100%); border-radius: 15px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s;">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" alt="Chocolate Cake" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                <h3 style="margin: 1rem 0; color: #e68af7;">Triple Chocolate Cake</h3>
+                <p style="color: #666; height: 3em;">Decadent chocolate layers with ganache filling</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;">
+                    <p style="color: #e68af7; font-weight: bold; font-size: 1.2rem;">$9.99</p>
+                    <span style="color: #f7d794;"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button onclick="addToCart(this)" style="width: 100%; padding: 0.8rem; background: linear-gradient(to right, #e68af7 0%, #ff99cc 100%); color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;">Add to Cart</button>
+            </div>
+            <!-- Repeat similar product cards 5 more times for Row 4 -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(to right, #4facfe 0%, #e68af7 100%); color: white; padding: 3rem 0; margin-top: 4rem;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div>
+                <h3>Fusion Food Paradise</h3>
+                <p>Bringing global flavors to your doorstep</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#" style="color: white; text-decoration: none; display: block; margin: 0.5rem 0;">About Us</a>
+                <a href="#" style="color: white; text-decoration: none; display: block; margin: 0.5rem 0;">Contact</a>
+                <a href="#" style="color: white; text-decoration: none; display: block; margin: 0.5rem 0;">FAQ</a>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <i class="fab fa-facebook" style="font-size: 1.5rem; cursor: pointer;"></i>
+                    <i class="fab fa-instagram" style="font-size: 1.5rem; cursor: pointer;"></i>
+                    <i class="fab fa-twitter" style="font-size: 1.5rem; cursor: pointer;"></i>
+                </div>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <input type="email" placeholder="Enter your email" style="padding: 0.5rem; border-radius: 4px; border: none; margin-right: 0.5rem;">
+                <button style="padding: 0.5rem 1rem; background: white; color: #4facfe; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart(button) {
+            const card = button.closest('.product-card');
+            const productName = card.querySelector('h3').textContent;
+            const price = card.querySelector('p:nth-of-type(2)').textContent;
+            
+            cartCount++;
+            document.querySelector('.fa-shopping-cart').parentElement.innerHTML = 
+                `<i class="fas fa-shopping-cart"></i> Cart (${cartCount})`;
+            
+            button.innerHTML = 'Added to Cart!';
+            button.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                button.innerHTML = 'Add to Cart';
+                button.style.opacity = '1';
+            }, 2000);
+        }
+
+            // Add hover effects to product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.2)';
+                });
+    
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                });
+            });
+        </script>
+            
